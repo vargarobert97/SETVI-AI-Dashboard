@@ -4,7 +4,6 @@ import { useReportStore } from "../stores/reportStore.ts";
 const useLocalStorage = () => {
   const { reports, setReports } = useReportStore();
 
-  // Load from localStorage on init
   useEffect(() => {
     const saved = localStorage.getItem("reports");
     if (saved) {
@@ -16,7 +15,6 @@ const useLocalStorage = () => {
     }
   }, [setReports]);
 
-  // Save to localStorage on changes
   useEffect(() => {
     localStorage.setItem("reports", JSON.stringify(reports));
   }, [reports]);

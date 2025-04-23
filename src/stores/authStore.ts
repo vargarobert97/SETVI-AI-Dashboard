@@ -1,4 +1,3 @@
-// stores/authStore.ts
 import { create } from "zustand";
 
 type UserRole = "admin" | "viewer";

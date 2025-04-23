@@ -1,4 +1,3 @@
-// stores/activityStore.ts
 import { create } from "zustand";
 
 interface Activity {

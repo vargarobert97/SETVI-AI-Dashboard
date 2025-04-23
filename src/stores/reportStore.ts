@@ -58,9 +58,8 @@ export const useReportStore = create<ReportStore>()(
         }),
     }),
     {
-      name: "report-storage", // unique name for localStorage key
+      name: "report-storage",
       storage: createJSONStorage(() => localStorage),
-      // Custom serialization and deserialization should be handled outside of persist configuration
     }
   )
 );

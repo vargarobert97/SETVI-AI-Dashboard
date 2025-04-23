@@ -1,4 +1,3 @@
-// components/ReportEditor.tsx
 import { Editor } from "@tinymce/tinymce-react";
 import { useReportStore } from "../stores/reportStore.ts";
 import React from "react";

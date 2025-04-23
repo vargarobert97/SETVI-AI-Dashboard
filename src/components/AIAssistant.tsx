@@ -1,4 +1,3 @@
-// components/AIAssistant.tsx
 import { useState } from "react";
 import { Button, CircularProgress, Snackbar } from "@mui/material";
 import { useReportStore } from "../stores/reportStore.ts";
@@ -63,7 +62,7 @@ const AIAssistant = ({
         onClick={handleAIAction}
         disabled={loading}
         startIcon={loading ? <CircularProgress size={20} /> : null}
-        sx={{ mx: 1 }} // Add some horizontal margin
+        sx={{ mx: 1 }}
       >
         {mode === "generate" ? "Generate Draft" : "Summarize Content"}
       </Button>
