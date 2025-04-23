@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  Box,
+  CssBaseline,
+  Container,
+  AppBar,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import ReportList from "./components/ReportList.tsx";
+import NewReportButton from "./components/NewReportButton.tsx";
+import SearchBar from "./components/SearchBar.tsx";
+import useLocalStorage from "./hooks/useLocalStorage.ts";
 
 function App() {
+  useLocalStorage();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CssBaseline />
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            AI-Enhanced Intelligence Dashboard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Container maxWidth="lg" sx={{ mt: 4 }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between", mb: 3 }}>
+          <SearchBar onSearch={(query) => console.log("Search:", query)} />
+          <NewReportButton />
+        </Box>
+        <ReportList />
+      </Container>
     </div>
   );
 }
