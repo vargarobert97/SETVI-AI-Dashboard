@@ -19,7 +19,7 @@ function App() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            AI-Enhanced Intelligence Dashboard
+            SETVI Technical Task - Robert Varga
           </Typography>
         </Toolbar>
       </AppBar>

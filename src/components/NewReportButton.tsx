@@ -1,4 +1,3 @@
-// components/NewReportButton.tsx
 import { useState } from "react";
 import {
   Button,
@@ -14,7 +13,7 @@ import React from "react";
 const NewReportButton = () => {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
-  const { addReport } = useReportStore();
+  const addReport = useReportStore((state) => state.addReport);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -28,11 +27,8 @@ const NewReportButton = () => {
   const handleCreate = () => {
     if (title.trim()) {
       addReport({
-        id: Math.random().toString(36).substring(2, 9),
         title,
         content: "",
-        createdAt: new Date(),
-        updatedAt: new Date(),
       });
       handleClose();
     }
